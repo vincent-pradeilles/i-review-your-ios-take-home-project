@@ -19,8 +19,10 @@ final class ListTableViewModel {
     }
     
     func fetchPokemonItems() -> AnyPublisher<[PokemonItem], Error> {
-        guard let url = URL(string: Constants.pokemonListUrl)
-        else { return Fail(error: URLError(.badURL)).eraseToAnyPublisher() }
+        guard let url = URL(string: Constants.pokemonListUrl) else { 
+            return Fail(error: URLError(.badURL)).eraseToAnyPublisher()
+        }
+        
         return httpTask.downloadWithCombine(url: url)
     }
 }

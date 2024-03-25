@@ -16,6 +16,7 @@ final class ListTableViewController: UIViewController {
     
     private var cancellables = Set<AnyCancellable>()
 
+    // This should be in the ListTableViewModel
     private var items: [PokemonItem] = [] {
         didSet {
           tableView.reloadData()
@@ -28,7 +29,7 @@ final class ListTableViewController: UIViewController {
         viewModel.fetchPokemonItems()
             .receive(on: DispatchQueue.main)
             .sink { _ in
-
+                // Explain why the error is ignored
             } receiveValue: { [weak self] items in
                 self?.items = items
             }
@@ -36,7 +37,13 @@ final class ListTableViewController: UIViewController {
     }
     
     private func prepareView() {
-        tableView.register(UINib(nibName: "ListViewCell", bundle: nil), forCellReuseIdentifier: "ListViewCell")
+        tableView.register(
+            UINib(
+                nibName: "ListViewCell",
+                bundle: nil
+            ),
+            forCellReuseIdentifier: "ListViewCell"
+        )
         
         tableView.delegate = self
         tableView.dataSource = self

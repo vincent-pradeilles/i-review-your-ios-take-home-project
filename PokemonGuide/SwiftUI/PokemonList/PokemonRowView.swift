@@ -33,7 +33,7 @@ struct PokemonRowView: View {
             guard let url = URL(string: item.imageUrl) else { return }
             
             let image = try? await WebImageLoader(url: url).downloadWithAsync()
-            await MainActor.run {
+            await MainActor.run { // not sure if needed, since View is already @MainActor
                 self.image = image
             }
         }

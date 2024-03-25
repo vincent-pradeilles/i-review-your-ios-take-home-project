@@ -8,5 +8,9 @@
 import Foundation
 
 final class ListDetailViewModel {
-    var coordinator: ListDetailCoordinator!
+    var coordinator: ListDetailCoordinator
+    
+    init(coordinator: ListDetailCoordinator) {
+        self.coordinator = coordinator
+    }
 }

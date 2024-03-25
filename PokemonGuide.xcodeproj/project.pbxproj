@@ -226,19 +226,11 @@
 		01307F502BA2DCBF003E9A47 /* PokemonList */ = {
 			isa = PBXGroup;
 			children = (
-				01307F552BA2EFE8003E9A47 /* Views */,
 				01307F532BA2DD03003E9A47 /* PokemonListView.swift */,
+				01307F562BA2EFF3003E9A47 /* PokemonRowView.swift */,
 				01307F7A2BA4306D003E9A47 /* PokemonListViewModel.swift */,
 			);
 			path = PokemonList;
-			sourceTree = "<group>";
-		};
-		01307F552BA2EFE8003E9A47 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				01307F562BA2EFF3003E9A47 /* PokemonRowView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		01307F582BA2F1C8003E9A47 /* PokemonDetail */ = {
